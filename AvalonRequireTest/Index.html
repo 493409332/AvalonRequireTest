@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <style> 
+    .ms-controller {
+        display: none;
+    }
+    .nobarbg .oni-scrollbar {
+ background: transparent;
+   }
+</style>
+    <script src="avalon/avalon.js" type="text/javascript" data-main="main.js"></script>
+</head>
+<body>
+    
+
+ 
+<div ms-controller="Index" ms-css-height="clientHeight" ms-css-width="clientWidth" class="ms-controller">
+    <div ms-widget="layout,layoutVM1,$layoutVMOptions" style="border: none">
+           <div ms-layout-dock="north" style="background-color:#0094ff" >
+      
+       <h1 ms-click="TestClick">Test      testGrid 第一次打开组件加载依赖不成功 导致组件失败  关闭选项卡再次打开一切正常 </h1>  
+        </div>
+        <div ms-layout-dock="south" style="background-color:#0094ff">
+     
+            页脚
+        </div>
+        <div ms-layout-dock="west"> 
+
+            <div ms-widget="scrollbar,scrollbarVM,$scrollbar" class="oni-helper-reset" style="height: 100%;  width: 100%;" data-scrollbar-position="right" ms-click="scrollbarupdate">
+                <div class="oni-scrollbar-scroller oni-helper-reset">
+                    <div ms-widget="tree,tree2VM,$treeopts" class="menu-tree" style="height: 100%; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div ms-layout-dock="centre">
+               
+            <div id="Regionborder" style="border-left:solid 5px #eee;border-top:solid 2px #eee;width:100%;height:100%"  > 
+
+            <div ms-widget="tab,tabVM,$tabopts" style="width:100%;height:100%" data-tab-removable="true"></div>
+                 </div>
+ 
+
+          
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

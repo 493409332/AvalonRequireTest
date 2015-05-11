@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C484B09-EEDB-4F92-A950-8E34CE323A60}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AvalonRequireTest</RootNamespace>
+    <AssemblyName>AvalonRequireTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="avalon\avalon.getModel.js" />
+    <Content Include="avalon\avalon.js" />
+    <Content Include="avalon\button\avalon.button.css" />
+    <Content Include="avalon\button\avalon.button.doc.html" />
+    <Content Include="avalon\button\avalon.button.ex1.html" />
+    <Content Include="avalon\button\avalon.button.ex2.html" />
+    <Content Include="avalon\button\avalon.button.ex3.html" />
+    <Content Include="avalon\button\avalon.button.ex4.html" />
+    <Content Include="avalon\button\avalon.button.js" />
+    <Content Include="avalon\chameleon\.gitignore" />
+    <Content Include="avalon\chameleon\compass\css3\PIE.htc" />
+    <Content Include="avalon\chameleon\compass\tools\text\xml\ellipsis.xml" />
+    <Content Include="avalon\chameleon\oniui-common.css" />
+    <Content Include="avalon\chameleon\oniui-theme.css" />
+    <Content Include="avalon\dialog\avalon.dialog.css" />
+    <Content Include="avalon\dialog\avalon.dialog.doc.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex1.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex10.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex11.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex12.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex13.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex2.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex3.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex4.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex5.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex6.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex7.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex8.html" />
+    <Content Include="avalon\dialog\avalon.dialog.ex9.html" />
+    <Content Include="avalon\dialog\avalon.dialog.html" />
+    <Content Include="avalon\dialog\avalon.dialog.js" />
+    <Content Include="avalon\dialog\avalon.dialog.test.html" />
+    <Content Include="avalon\draggable\avalon.draggable.js" />
+    <Content Include="avalon\dropdown\avalon.dropdown.css" />
+    <Content Include="avalon\dropdown\avalon.dropdown.doc.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex1.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex10.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex11.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex12.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex13.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex14.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex15.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex2.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex3.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex4.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex5.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex6.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex7.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex8.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.ex9.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.html" />
+    <Content Include="avalon\dropdown\avalon.dropdown.js" />
+    <Content Include="avalon\layout\avalon.layout.css" />
+    <Content Include="avalon\layout\avalon.layout.js" />
+    <Content Include="avalon\live\avalon.live.doc.html" />
+    <Content Include="avalon\live\avalon.live.ex1.html" />
+    <Content Include="avalon\live\avalon.live.js" />
+    <Content Include="avalon\loading\avalon.loading.bar.html" />
+    <Content Include="avalon\loading\avalon.loading.css" />
+    <Content Include="avalon\loading\avalon.loading.doc.html" />
+    <Content Include="avalon\loading\avalon.loading.ex.html" />
+    <Content Include="avalon\loading\avalon.loading.ex1.html" />
+    <Content Include="avalon\loading\avalon.loading.ex2.html" />
+    <Content Include="avalon\loading\avalon.loading.ex3.html" />
+    <Content Include="avalon\loading\avalon.loading.ex4.html" />
+    <Content Include="avalon\loading\avalon.loading.ex5.html" />
+    <Content Include="avalon\loading\avalon.loading.ex6.html" />
+    <Content Include="avalon\loading\avalon.loading.ex7.html" />
+    <Content Include="avalon\loading\avalon.loading.html" />
+    <Content Include="avalon\loading\avalon.loading.js" />
+    <Content Include="avalon\pager\avalon.pager.css" />
+    <Content Include="avalon\pager\avalon.pager.doc.html" />
+    <Content Include="avalon\pager\avalon.pager.ex1.html" />
+    <Content Include="avalon\pager\avalon.pager.ex2.html" />
+    <Content Include="avalon\pager\avalon.pager.ex3.html" />
+    <Content Include="avalon\pager\avalon.pager.ex4.html" />
+    <Content Include="avalon\pager\avalon.pager.ex5.html" />
+    <Content Include="avalon\pager\avalon.pager.ex6.html" />
+    <Content Include="avalon\pager\avalon.pager.ex7.html" />
+    <Content Include="avalon\pager\avalon.pager.html" />
+    <Content Include="avalon\pager\avalon.pager.js" />
+    <Content Include="avalon\panel\avalon.panel.js" />
+    <Content Include="avalon\panel\template.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.css" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.doc.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex1.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex2.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex3.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex4.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.ex5.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.html" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.js" />
+    <Content Include="avalon\scrollbar\test.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.css" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.doc.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex1.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex10.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex11.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex12.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex13.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex14.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex15.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex16.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex2.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex3.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex4.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex5.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex6.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex7.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex8.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.ex9.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.html" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.js" />
+    <Content Include="avalon\simplegrid\test.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.css" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.doc.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex1.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex2.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex3.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex4.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex5.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex6.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.ex7.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.html" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.js" />
+    <Content Include="avalon\smartgrid\simplegrid10.png" />
+    <Content Include="avalon\smartgrid\simplegrid200.png" />
+    <Content Include="avalon\smartgrid\smartgrid10.png" />
+    <Content Include="avalon\smartgrid\smartgrid200.png" />
+    <Content Include="avalon\tab\avalon.tab.ajax.html" />
+    <Content Include="avalon\tab\avalon.tab.close.html" />
+    <Content Include="avalon\tab\avalon.tab.css" />
+    <Content Include="avalon\tab\avalon.tab.doc.html" />
+    <Content Include="avalon\tab\avalon.tab.ex.html" />
+    <Content Include="avalon\tab\avalon.tab.ex1.html" />
+    <Content Include="avalon\tab\avalon.tab.ex2.html" />
+    <Content Include="avalon\tab\avalon.tab.ex3.html" />
+    <Content Include="avalon\tab\avalon.tab.ex4.html" />
+    <Content Include="avalon\tab\avalon.tab.ex5.html" />
+    <Content Include="avalon\tab\avalon.tab.ex6.html" />
+    <Content Include="avalon\tab\avalon.tab.ex7.html" />
+    <Content Include="avalon\tab\avalon.tab.ex8.html" />
+    <Content Include="avalon\tab\avalon.tab.ex9.html" />
+    <Content Include="avalon\tab\avalon.tab.html" />
+    <Content Include="avalon\tab\avalon.tab.js" />
+    <Content Include="avalon\tab\avalon.tab.panels.html" />
+    <Content Include="avalon\tab\avalon.tab.source.html" />
+    <Content Include="avalon\tab\avalon.tab.最新版.css" />
+    <Content Include="avalon\tab\avalon.tab1.js" />
+    <Content Include="avalon\testui\avalon.testui.js" />
+    <Content Include="avalon\tree\avalon.tree.async.js" />
+    <Content Include="avalon\tree\avalon.tree.check.html" />
+    <Content Include="avalon\tree\avalon.tree.check.js" />
+    <Content Include="avalon\tree\avalon.tree.css" />
+    <Content Include="avalon\tree\avalon.tree.doc.html" />
+    <Content Include="avalon\tree\avalon.tree.edit.html" />
+    <Content Include="avalon\tree\avalon.tree.edit.js" />
+    <Content Include="avalon\tree\avalon.tree.ex.html" />
+    <Content Include="avalon\tree\avalon.tree.ex1.html" />
+    <Content Include="avalon\tree\avalon.tree.ex2.html" />
+    <Content Include="avalon\tree\avalon.tree.ex3.html" />
+    <Content Include="avalon\tree\avalon.tree.ex4.html" />
+    <Content Include="avalon\tree\avalon.tree.ex5.html" />
+    <Content Include="avalon\tree\avalon.tree.html" />
+    <Content Include="avalon\tree\avalon.tree.js" />
+    <Content Include="avalon\tree\avalon.tree.leaf.html" />
+    <Content Include="avalon\tree\avalon.tree.menu.js" />
+    <Content Include="avalon\tree\avalon.tree.menu1.js" />
+    <Content Include="avalon\tree\avalon.tree.nodes.html" />
+    <Content Include="avalon\tree\avalon.tree.parent.html" />
+    <Content Include="avalon\tree\avalon.tree1.js" />
+    <Content Include="avalon\tree\tree-menu.css" />
+    <Content Include="avalon\tree\treeMenu.css" />
+    <Content Include="Css\Global.css" />
+    <Content Include="Css\menu-tree.css" />
+    <Content Include="Index.html" />
+    <Content Include="Navigation.html" />
+    <Content Include="Navigation.js" />
+    <Content Include="Indexutility.js" />
+    <Content Include="jquery\extend\jquery-ui-1.8.20.js" />
+    <Content Include="jquery\extend\jquery-ui-1.8.20.min.js" />
+    <Content Include="jquery\extend\jquery.unobtrusive-ajax.js" />
+    <Content Include="jquery\extend\jquery.unobtrusive-ajax.min.js" />
+    <None Include="jquery\extend\jquery.validate-vsdoc.js" />
+    <Content Include="jquery\extend\jquery.validate.js" />
+    <Content Include="jquery\extend\jquery.validate.min.js" />
+    <Content Include="jquery\extend\jquery.validate.unobtrusive.js" />
+    <Content Include="jquery\extend\jquery.validate.unobtrusive.min.js" />
+    <None Include="jquery\jquery-1.7.1.intellisense.js" />
+    <Content Include="jquery\jquery-1.7.1.js" />
+    <Content Include="jquery\jquery-1.7.1.min.js" />
+    <Content Include="main.js" />
+    <Content Include="Test.html" />
+    <Content Include="test.js" />
+    <Content Include="Test1.html" />
+    <Content Include="test1.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="avalon\button\avalon.button.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_appearance.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_background-clip.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_background-origin.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_background-size.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_border-radius.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_box-shadow.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_box-sizing.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_box.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_columns.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_filter.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_font-face.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_hyphenation.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_images.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_inline-block.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_opacity.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_pie.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_regions.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_shared.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_text-shadow.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_transform-legacy.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_transform.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_transition.scss" />
+    <Content Include="avalon\chameleon\compass\css3\_user-interface.scss" />
+    <Content Include="avalon\chameleon\compass\layout\vertical-align\_block.scss" />
+    <Content Include="avalon\chameleon\compass\layout\_flexible-box-model.scss" />
+    <Content Include="avalon\chameleon\compass\layout\_grid-background.scss" />
+    <Content Include="avalon\chameleon\compass\layout\_sticky-footer.scss" />
+    <Content Include="avalon\chameleon\compass\layout\_stretching.scss" />
+    <Content Include="avalon\chameleon\compass\layout\_vertical-align.scss" />
+    <Content Include="avalon\chameleon\compass\themes\_smoothness.scss" />
+    <Content Include="avalon\chameleon\compass\tools\animation\_animation.scss" />
+    <Content Include="avalon\chameleon\compass\tools\animation\_keyframes.scss" />
+    <Content Include="avalon\chameleon\compass\tools\animation\_timing-function.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_blueprint-grid.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_carbon-fiber.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_checkerboard.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_cicada-stripes.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_gradients.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_houndstooth.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_lined-paper.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_madras.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_metal.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_noise.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_polka-dot.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_radial-overlay.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_rainbow.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_stripes.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_tablecloth.scss" />
+    <Content Include="avalon\chameleon\compass\tools\background\_tartan.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_bevel.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_corners-tucked.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_cutout.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_folded-corner.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_glass.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_ribbon.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_scatter.scss" />
+    <Content Include="avalon\chameleon\compass\tools\effect\_tape.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_curled-corners.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_curved.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_flying.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_lifted-corners.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_perspective.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_raised.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\drop\_transform-requirement.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\_drop.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shadow\_top-edge.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_hexagon.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_octagon.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_parallelogram.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_pentagon.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_rectangle.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_rhombus.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_square.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_star.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_trapezoid.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\polygon\_triangle.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_diamond.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_egg.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_heart.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_infinity.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_pacman.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\symbol\_yin-yang.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\_ellipse.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\_polygon.scss" />
+    <Content Include="avalon\chameleon\compass\tools\shape\_symbol.scss" />
+    <Content Include="avalon\chameleon\compass\tools\text\_ellipsis.scss" />
+    <Content Include="avalon\chameleon\compass\tools\text\_force-wrap.scss" />
+    <Content Include="avalon\chameleon\compass\tools\text\_nowrap.scss" />
+    <Content Include="avalon\chameleon\compass\tools\text\_replacement.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_animation.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_background.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_clearfix.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_color.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_effect.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_float.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_hacks.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_list.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_min.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_pseudo-element.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_reset.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_shadow.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_shape.scss" />
+    <Content Include="avalon\chameleon\compass\tools\_text.scss" />
+    <Content Include="avalon\chameleon\compass\_config.scss" />
+    <Content Include="avalon\chameleon\compass\_css3.scss" />
+    <Content Include="avalon\chameleon\compass\_tools.scss" />
+    <Content Include="avalon\chameleon\oniui-common.scss" />
+    <Content Include="avalon\chameleon\oniui-theme.scss" />
+    <Content Include="avalon\dialog\avalon.dialog.scss" />
+    <Content Include="avalon\dropdown\avalon.dropdown.scss" />
+    <Content Include="avalon\loading\avalon.loading.scss" />
+    <Content Include="avalon\pager\avalon.pager.scss" />
+    <Content Include="avalon\scrollbar\avalon.scrollbar.scss" />
+    <Content Include="avalon\simplegrid\avalon.simplegrid.scss" />
+    <Content Include="avalon\smartgrid\avalon.smartgrid.scss" />
+    <Content Include="avalon\tab\avalon.tab.scss" />
+    <Content Include="avalon\tree\avalon.tree.data.php" />
+    <Content Include="avalon\tree\avalon.tree.scss" />
+    <Content Include="avalon\tree\treeMenu.css.map" />
+    <Content Include="avalon\tree\treeMenu.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35821/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

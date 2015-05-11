@@ -1,0 +1,14 @@
+﻿.menu-tree .oni-tree li span.flight_ico_open,
+.menu-tree .oni-tree li span.flight_ico_close {
+    background: url(http://simg4.qunarzz.com/site/images/homepage/ico_p3.png) no-repeat scroll 0 -20px;
+    width: 18px;
+    height: 20px;
+    margin-right: 5px;
+}
+.menu-tree .oni-tree li span.hotel_ico_open,
+.menu-tree .oni-tree li span.hotel_ico_close {
+    background: url(http://data.jsche.net/images/b2.jpg) no-repeat scroll 0 -20px;
+    width: 18px;
+    height: 20px;
+    margin-right: 5px;
+}
