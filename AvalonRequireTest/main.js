@@ -81,7 +81,7 @@ function ()
         { id: 11, pid: 1, name: "请点开", open: true },
         { id: 111, pid: 11, name: "北京", url: "/test", guid: "test" },
         { id: 112, pid: 11, name: "上海", url: "/test1", guid: "test1" },
-          { id: 113, pid: 11, name: "testGrid 问题页面", url: "/Navigation", guid: "Navigationindex" },
+          { id: 113, pid: 11, name: "<div style='background:red'><b>testGrid 问题页面</b></div>", url: "/Navigation", guid: "Navigationindex" },
         { id: 114, pid: 11, name: "广州", url: "http://www.baidu.com", guid: "hehe" }, 
           { id: 111, pid: 11, name: "北京", url: "Index/test3", guid: "test3" },
         { id: 112, pid: 11, name: "上海" },
